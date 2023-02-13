@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+    <link rel="icon" href="/favicon.ico">
+    <title></title>
+    <style>
+      .init-text {
+        text-align: center;
+        padding-top: 300px;
+      }
+
+      body {
+        -webkit-text-size-adjust: 100% !important;
+        text-size-adjust: 100% !important;
+        -moz-text-size-adjust: 100% !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <noscript>
+      <strong>很抱歉您的手机版本过低，系统不支持。请升级您的版本后再浏览。</strong>
+    </noscript>
+    <div id="app">
+      <div class="init-text">正在马不停蹄地加载中...</div>
+    </div>
+    <!-- built files will be auto injected -->
+    <script src='https://static.igancao.com/js/vue/jweixin-1.4.0.js?v=1571299470'></script>
+    <script>
+      /* 
+       * 页面加入这段代码可使Android机器页面不再受到用户字体缩放强制改变大小
+       * 但是会有一个1秒左右的延迟，期间可以考虑通过loading展示
+       */
+      (function () {
+        if (typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function") {
+          handleFontSize();
+        } else {
+          if (document.addEventListener) {
+            document.addEventListener("WeixinJSBridgeReady", handleFontSize, false);
+          } else if (document.attachEvent) {
+            document.attachEvent("WeixinJSBridgeReady", handleFontSize);
+            document.attachEvent("onWeixinJSBridgeReady", handleFontSize);
+          }
+        };
+
+        function handleFontSize() {
+          WeixinJSBridge.invoke("setFontSizeCallback", {
+            "fontSize": 0
+          });
+          WeixinJSBridge.on("menu:setfont", function () {
+            WeixinJSBridge.invoke("setFontSizeCallback", {
+              "fontSize": 0
+            });
+          });
+        };
+
+      })();
+    </script>
+
+    <script type="module" src="/src/main.ts"></script>
+
+  </body>
+
+</html>

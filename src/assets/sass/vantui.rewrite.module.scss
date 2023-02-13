@@ -1,0 +1,169 @@
+.alert-popup {
+    border-radius: 4px !important;
+
+    .van-dialog__content--isolated {
+        min-height: 0;
+    }
+
+    .van-dialog__message {
+        white-space: initial;
+        padding: 16px;
+    }
+
+    .van-dialog__confirm {
+        background: none;
+        background-color: $primaryColor !important;
+        color: $textColor !important;
+        border-radius: 4px;
+    }
+
+    .van-dialog__footer {
+        padding: 16px
+    }
+
+    .van-dialog__confirm {
+        @extend .btn-style-primary;
+        @extend .btn-size-default;
+    }
+}
+
+.btn-style-primary {
+    &.van-button {
+        @extend .btn-style-primary;
+    }
+}
+
+.btn-style-caution {
+    &.van-button {
+        @extend .btn-style-caution;
+    }
+}
+
+.btn-size-default {
+    &.van-button {
+        @extend .btn-size-default;
+    }
+}
+
+.van-button--plain.van-button--default {
+    border-color: #888;
+    border-radius: 6px;
+}
+
+.confirm-popup {
+    border-radius: 6px !important;
+    min-width: 295px;
+
+    .strong-text {
+        color: #BE2929;
+    }
+
+    .van-dialog__header {
+        padding-top: 24px;
+    }
+
+    .van-dialog__confirm {
+        height: 40px !important;
+        line-height: 40px !important;
+        background: none;
+        background-color: $primaryColor !important;
+        border-color: $primaryColor !important;
+        color: $textColor !important;
+        border-radius: 6px;
+    }
+
+    .van-dialog__cancel {
+        height: 40px !important;
+        line-height: 40px !important;
+        background: none;
+        background-color: #fff !important;
+        color: $textColor !important;
+        border-radius: 6px;
+        border: 1px solid $borderColor;
+    }
+
+    .van-dialog__message {
+        padding: 16px;
+        font-size: 16px;
+        line-height: 22px;
+        color: #222222;
+        text-align: center;
+    }
+
+    .van-dialog__footer {
+        display: flex;
+    }
+
+    .van-button {
+        +.van-button {
+            margin-left: 8px;
+        }
+    }
+}
+
+.activity-confirm-popup {
+    .van-dialog__confirm {
+        margin-left: 8px;
+        background-color: #dc5c52 !important;
+        color: #fff !important;
+    }
+}
+
+.van-swipe__indicator--active {
+    background-color: #7B7B7B !important;
+}
+
+// 日历
+.van-calendar__selected-day {
+    background-color: $primaryColor !important;
+    color: #111 !important;
+}
+
+.van-calendar__confirm {
+    background-color: $primaryColor !important;
+    color: #111 !important;
+    border-color: $primaryColor !important;
+    height: 40px !important;
+    line-height: 40px !important;
+    font-size: 16px !important;
+    border-radius: 6px !important;
+}
+
+// 弹窗
+.van-popup {
+    border-radius: 12px;
+    padding: 16px;
+    z-index: 2;
+
+    &.van-popup--bottom {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .van-popup__close-icon {
+        font-size: 12px;
+        color: #888;
+        top: 22px;
+        right: 19px;
+    }
+
+    .van-picker__toolbar {
+        border-bottom: 1px solid $bgColor;
+
+        .van-picker__confirm {
+            color: $textFillColor;
+            font-weight: $fontWeightBold;
+        }
+
+        .van-picker__cancel {
+            color: #888888;
+            font-weight: $fontWeightBold;
+        }
+
+        .van-picker__title {
+            font-size: 16px;
+            color: #262626;
+            font-weight: $fontWeightBold;
+        }
+    }
+}

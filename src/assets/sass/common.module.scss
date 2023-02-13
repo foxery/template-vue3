@@ -1,0 +1,354 @@
+@import "./variable.module.scss";
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+html,
+body {
+    overflow: hidden;
+    height: 100%;
+    font-size: 16px;
+}
+
+#app {
+    height: 100vh;
+    overflow-y: auto;
+}
+
+body {
+    line-height: 1;
+    color: $textColor;
+    font-family: "SF Pro SC", "SF Pro Text", "SF Pro Icons", "PingFang SC", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+// 文档流
+.block {
+    display: block;
+    width: 100%;
+}
+
+.relative {
+    position: relative;
+}
+
+.bold {
+    font-weight: $fontWeightBold;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.clearfix {
+
+    &:before,
+    &:after {
+        display: table;
+        content: "";
+    }
+
+    &:after {
+        clear: both
+    }
+}
+
+.clear-overflow {
+    overflow: hidden;
+}
+
+// 对齐方式
+.align-middle {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.align-bottom {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+// 文本相关
+.txt-r {
+    text-align: right;
+}
+
+.txt-c {
+    text-align: center;
+}
+
+.txt-l {
+    text-align: left;
+}
+
+.text-light {
+    color: $textLightColor;
+}
+
+// 文本单行省略
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    width: 100%;
+}
+
+// 按钮
+.btn-style-primary {
+    border-radius: 6px;
+    background-color: $primaryColor;
+    color: $textColor;
+    border-color: $primaryColor;
+
+    &[disabled] {
+        background-color: $borderColor;
+        color: $textSlightlyColor;
+        border-color: $borderColor;
+    }
+}
+
+.btn-style-caution {
+    border-radius: 6px;
+    background-color: #DC5C52;
+    color: $textColor;
+    border-color: #DC5C52;
+    color: #fff;
+
+    &[disabled] {
+        background-color: $borderColor;
+        color: $textSlightlyColor;
+        border-color: $borderColor;
+    }
+}
+
+.btn-style-plain {
+    border-radius: 6px !important;
+    background-color: #fff;
+    color: $textColor;
+    border-color: #888888;
+}
+
+.btn-size-default {
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+
+// 内容
+.container {
+    min-height: 100vh;
+    background-color: $bgLightColor;
+
+    &.padding {
+        padding: 16px;
+    }
+
+    .container-padding {
+        padding: 16px;
+    }
+
+    &.limit-height {
+        height: 100vh;
+        overflow-y: auto;
+    }
+}
+
+
+
+.card {
+    border-radius: 6px;
+    padding: 16px;
+    background-color: #fff;
+
+    .card-title {
+        font-size: 14px;
+        font-weight: $fontWeightBold;
+    }
+}
+
+.bottom-bar-fixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: #fff;
+    padding: 16px;
+}
+
+// 分割线
+.my-divider-thick {
+    width: 100%;
+    height: 8px;
+    background-color: #F0F0F0;
+}
+
+// 三角形
+.triangle-down {
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-top-color: #888;
+}
+
+.triangle-up {
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-bottom-color: #888;
+}
+
+// 绘制正方形图片
+.square-wrapper {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+
+    .square-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+// 选择框
+.icn-checkbox {
+    width: 20px;
+    height: 20px;
+}

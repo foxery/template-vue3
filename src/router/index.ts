@@ -7,7 +7,7 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: '/home',
-    component: () => import('@/views/Home/index.vue'),
+    component: () => import(/* webpackChunkName: "home" */'@/views/Home/index.vue'),//// 路由懒加载 通过webpackChunkName设置分割后代码块的名字
   },
   {
     path: '/auth',
